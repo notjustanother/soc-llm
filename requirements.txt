@@ -1,0 +1,17 @@
+axolotl>=0.6.0
+transformers>=4.45.0
+accelerate>=0.34.0
+bitsandbytes>=0.43.0
+peft>=0.12.0
+datasets>=2.20.0
+evaluate>=0.4.2
+huggingface_hub>=0.24.0
+qdrant-client>=1.9.1
+haystack-ai>=2.0.0
+pandas>=2.2.2
+numpy>=1.26.4
+scikit-learn>=1.5.1
+tqdm>=4.66.4
+pyyaml>=6.0.1
+
+sentence-transformers>=2.7.0

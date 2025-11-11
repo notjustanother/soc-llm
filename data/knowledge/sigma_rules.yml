@@ -1,0 +1,29 @@
+title: Multiple Failed Logons then Success (Brute Force)
+id: sigma-0001
+status: experimental
+logsource:
+  product: windows
+  service: security
+detection:
+  selection_fail:
+    EventID: 4625
+  selection_success:
+    EventID: 4624
+  timeframe: 10m
+  condition: selection_fail | count() by SourceIp >= 5 and selection_success by SourceIp
+level: medium
+
+---
+
+title: LSASS Handle Access (Credential Dumping)
+id: sigma-0002
+status: experimental
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 10
+    TargetImage: lsass.exe
+  condition: selection
+level: high

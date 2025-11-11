@@ -1,0 +1,23 @@
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Datasets & outputs
+data/*.parquet
+data/*.zst
+outputs/
+checkpoints/
+hf_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

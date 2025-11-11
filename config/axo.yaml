@@ -1,0 +1,32 @@
+# Axolotl QLoRA config for SOC-LLM budget training
+base_model: meta-llama/Meta-Llama-3.1-8B-Instruct #Qwen/Qwen2.5-7B-Instruct
+load_in_4bit: true
+strict: false
+
+datasets:
+  - path: data/train.jsonl
+    type: alpaca
+  - path: data/val.jsonl
+    type: alpaca
+    split: validation
+
+adapters: lora
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+
+sequence_len: 2048
+micro_batch_size: 2
+gradient_accumulation_steps: 8
+epochs: 3
+learning_rate: 2e-4
+optimizer: paged_adamw_8bit
+
+save_steps: 300
+eval_steps: 300
+logging_steps: 50
+output_dir: checkpoints
+resume_from_checkpoint: true
+save_safetensors: true
+
+# Push/pull settings are driven by CLI flags (see README)

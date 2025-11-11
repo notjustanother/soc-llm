@@ -1,0 +1,32 @@
+[
+  {
+    "id": "T1003",
+    "name": "OS Credential Dumping",
+    "desc": "Adversaries may attempt to dump credentials from the operating system, e.g., LSASS memory on Windows.",
+    "platforms": [
+      "Windows"
+    ],
+    "detection": "Monitor access to lsass.exe handles (Sysmon Event ID 10), suspicious use of procdump, comsvcs.dll."
+  },
+  {
+    "id": "T1110",
+    "name": "Brute Force",
+    "desc": "Adversaries may use brute force techniques to guess credentials.",
+    "platforms": [
+      "Windows",
+      "Linux",
+      "macOS"
+    ],
+    "detection": "Look for multiple authentication failures followed by a success from the same source IP or user."
+  },
+  {
+    "id": "T1568.003",
+    "name": "Domain Generation Algorithms",
+    "desc": "Malware may use DGA to generate domain names for C2.",
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "detection": "High volume of DNS queries to random-looking domains with low TTLs."
+  }
+]
