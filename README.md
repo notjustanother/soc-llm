@@ -17,7 +17,7 @@ Designed to work across **Colab** and **Kaggle** using **Hugging Face Hub** as a
 2. **Create a Hugging Face token** (Write scope) and keep it handy.
 3. Open `notebooks/colab_train.ipynb` in **Colab** (File → Open notebook → GitHub).
 4. Run the setup cells, enter your `HF_TOKEN`, and start training.
-5. After each session, **push LoRA** to HF Hub (`yourname/soc-llm-lora`).
+5. After each session, **push LoRA** to HF Hub (`notjustanother/soc-llm-lora`).
 6. Open `notebooks/kaggle_train.ipynb` in **Kaggle** → **Copy & Edit** → Resume training from the same HF repo.
 7. Repeat across platforms until done. Use `scripts/eval_soc_json.py` to score held-out tasks.
 
@@ -89,7 +89,7 @@ Run `scripts/eval_soc_json.py` to score JSON correctness on held-out examples:
 
 ## Notes
 
-- Recommended base model: `Qwen/Qwen2.5-7B-Instruct` (default), or swap for `meta-llama/Meta-Llama-3.1-8B-Instruct`.
+- Recommended base model: `microsoft/Phi-3-mini-4k-instruct` (default), or swap for `meta-llama/Meta-Llama-3.1-8B-Instruct`.
 - Keep context length modest (≤ 2k) on free GPUs.
 - Always push checkpoints to HF Hub at the end of each session.
 - For privacy-sensitive work, **avoid storing real logs** in public repos. Use private HF repos or mock/synthetic data.
@@ -106,7 +106,7 @@ pip install -r requirements.txt
 axolotl train config/axo.yaml
 
 # Push LoRA adapter to HF Hub
-axolotl push-lora config/axo.yaml --repo YOUR_NAME/soc-llm-lora --token $HF_TOKEN
+axolotl push-lora config/axo.yaml --repo notjustanother/soc-llm-lora --token $HF_TOKEN
 
 # Merge LoRA (optional)
 axolotl merge-lora config/axo.yaml --save_safetensors true
