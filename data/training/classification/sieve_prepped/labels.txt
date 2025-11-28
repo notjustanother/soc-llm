@@ -3,6 +3,7 @@ authentication-success
 connection-closed
 connection-failed
 connection-opened
+database-operation
 directory-changed
 directory-created
 directory-deleted

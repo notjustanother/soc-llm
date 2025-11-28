@@ -15,9 +15,12 @@ data/*.zst
 outputs/
 checkpoints/
 hf_cache/
+models/
+tokenizers/
 
 # Notebooks
 .ipynb_checkpoints/
+notebooks/download*.*
 
 # OS
 .DS_Store
